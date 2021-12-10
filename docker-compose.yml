@@ -4,6 +4,8 @@ services:
   pocketspace:
     build: .
     image: pocketspace
+    container_name: pocketspace
     volumes:
       - ./src/:/home/pocketspace/
-    command: tail -f /dev/null
+    restart: unless-stopped
+    stdin_open: true
